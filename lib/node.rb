@@ -20,7 +20,7 @@ class Node
     if @next_node.nil?
       return [self]
     else
-      return [self] + [@next_node.gather]
+      return [self] + @next_node.gather
     end
   end
 end
