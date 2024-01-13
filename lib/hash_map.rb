@@ -29,6 +29,10 @@ class HashMap
     end
   end
 
+  def put_new_head_node(index, node)
+    @buckets[index] = node
+  end
+
   def append_node(index, node)
     @buckets[index].append(node)
   end
