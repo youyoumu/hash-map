@@ -75,4 +75,20 @@ class HashMap
   def buckets_almost_full?
     calc_buckets_load >= @load_factor
   end
+
+  def print_buckets
+    puts "Hash index size: #{@size}"
+    @buckets.each_with_index do |head, index|
+      print "#{index} -> "
+      if head.nil?
+        puts ''
+        next
+      end
+      row = head.gather
+      row.each do |node|
+        print "[#{node.key}, #{node.value}] -> "
+      end
+      puts ''
+    end
+  end
 end
