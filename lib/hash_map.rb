@@ -1,5 +1,6 @@
 class HashMap
   def initialize(size = 16, load_factor = 0.75)
+    @load_factor = load_factor
     @size = size
     @buckets = Array.new(@size)
   end
