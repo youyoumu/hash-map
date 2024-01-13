@@ -13,6 +13,12 @@ class HashMap
     result % @size
   end
 
+  def set(key, value)
+    index = hash(key)
+    node = Node.new(value)
+    @buckets[index] = node
+  end
+
   def calc_buckets_load
     counter = 0
     @buckets.each do |node|
