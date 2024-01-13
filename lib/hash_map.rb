@@ -69,7 +69,7 @@ class HashMap
     @buckets.each do |node|
       counter += 1 unless node.nil?
     end
-    counter / @size
+    counter.to_f / @size.to_f
   end
 
   def buckets_almost_full?
