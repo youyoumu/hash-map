@@ -57,6 +57,13 @@ class HashMap
     nodes
   end
 
+  def clear_next(nodes)
+    nodes.each do |node|
+      node.next_node = nil
+    end
+    nodes
+  end
+
   def calc_buckets_load
     counter = 0
     @buckets.each do |node|
