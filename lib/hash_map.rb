@@ -18,14 +18,10 @@ class HashMap
   def set(key, value)
     index = hash(key)
     node = Node.new(key, value)
-    if !@buckets[index].nil? && @buckets[index].key == key
-      next_node = @buckets[index].next_node
-      @buckets[index] = node
-      node.next_node = next_node
-    elsif !@buckets[index].nil? && @buckets[index].key != key
-      @buckets[index].append(node)
-    elsif @buckets[index].nil?
-      @buckets[index] = node
+    if @buckets[index].nil?
+      put_new_head_node(index, node)
+    else
+      append_node(index, node)
     end
   end
 
