@@ -79,6 +79,7 @@ class HashMap
 
   def print_buckets
     puts "Hash index size: #{@size}"
+    puts "Buckets capacity: #{calc_buckets_load * 100}%"
     @buckets.each_with_index do |head, index|
       print "#{index} -> "
       if head.nil?
