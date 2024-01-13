@@ -51,6 +51,7 @@ class HashMap
   def get_all_nodes
     nodes = []
     @buckets.each do |head|
+      next if head.nil?
       nodes += head.gather
     end
     nodes
