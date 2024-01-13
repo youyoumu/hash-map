@@ -43,7 +43,7 @@ class HashMap
     @size = @size * 2
     @buckets = Array.new(@size)
     nodes.each do |node|
-      index = hash(node.key)
+      index = hash(node.key.split(''))
       put_node(index, node)
     end
   end
