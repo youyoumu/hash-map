@@ -13,4 +13,11 @@ class HashMap
     result
   end
 
+  def calc_buckets_load
+    counter = 0
+    @buckets.each do |node|
+      counter += 1 unless node.nil?
+    end
+    counter / @size
+  end
 end
