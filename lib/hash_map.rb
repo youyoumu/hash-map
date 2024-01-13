@@ -18,11 +18,7 @@ class HashMap
   def set(key, value)
     index = hash(key)
     node = Node.new(key, value)
-    if @buckets[index].nil?
-      put_new_head_node(index, node)
-    else
-      append_node(index, node)
-    end
+    put_node(index, node)
   end
 
   def put_new_head_node(index, node)
@@ -31,6 +27,14 @@ class HashMap
 
   def append_node(index, node)
     @buckets[index].append(node)
+  end
+
+  def put_node(index, node)
+    if @buckets[index].nil?
+      put_new_head_node(index, node)
+    else
+      append_node(index, node)
+    end
   end
 
   def increase_buckets_size
