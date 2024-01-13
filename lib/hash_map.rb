@@ -20,4 +20,8 @@ class HashMap
     end
     counter / @size
   end
+
+  def buckets_almost_full?
+    calc_buckets_load >= @load_factor
+  end
 end
