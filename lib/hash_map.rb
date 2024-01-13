@@ -29,6 +29,14 @@ class HashMap
     end
   end
 
+  def get_all_nodes
+    nodes = []
+    @buckets.each do |head|
+      nodes += head.gather
+    end
+    nodes
+  end
+
   def calc_buckets_load
     counter = 0
     @buckets.each do |node|
