@@ -6,11 +6,11 @@ class HashMap
   end
 
   def hash(value)
-    result = 0
+    result = 100
     value.each do |char|
       result += char.ord
     end
-    result
+    result % @size
   end
 
   def calc_buckets_load
