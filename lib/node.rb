@@ -7,6 +7,7 @@ class Node
   end
 
   def append(node)
+    @value = node.value if @key == node.key
     if @next_node.nil?
       @next_node = node
     else
