@@ -29,6 +29,12 @@ class HashMap
     end
   end
 
+  def replace_head(index, node)
+    next_node = @buckets[index].next_node
+    @buckets[index] = node
+    node.next_node = next_node
+  end
+
   def increase_buckets_size
     nodes = get_all_nodes
     @size = @size * 2
