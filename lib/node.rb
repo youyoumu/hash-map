@@ -13,4 +13,12 @@ class Node
       @next_node.append(node)
     end
   end
+
+  def gather
+    if @next_node.nil?
+      return [self]
+    else
+      return [self] + [@next_node.gather]
+    end
+  end
 end
