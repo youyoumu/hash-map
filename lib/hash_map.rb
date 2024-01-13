@@ -29,12 +29,6 @@ class HashMap
     end
   end
 
-  def replace_head(index, node)
-    next_node = @buckets[index].next_node
-    @buckets[index] = node
-    node.next_node = next_node
-  end
-
   def append_node(index, node)
     @buckets[index].append(node)
   end
