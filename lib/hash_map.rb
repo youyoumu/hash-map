@@ -18,6 +18,7 @@ class HashMap
   def set(key, value)
     index = hash(key)
     node = Node.new(key, value)
+    increase_buckets_size if buckets_almost_full?
     put_node(index, node)
   end
 
