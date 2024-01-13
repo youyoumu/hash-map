@@ -5,4 +5,12 @@ class Node
     @value = value
     @next_node = nil
   end
+
+  def append(node)
+    if @next_node.nil?
+      @next_node = node
+    else
+      @next_node.append(node)
+    end
+  end
 end
