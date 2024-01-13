@@ -29,6 +29,16 @@ class HashMap
     end
   end
 
+  def increase_buckets_size
+    nodes = get_all_nodes
+    @size = @size * 2
+    @buckets = Array.new(@size)
+    nodes.each do |node|
+      index = hash(node.key)
+
+    end
+  end
+
   def get_all_nodes
     nodes = []
     @buckets.each do |head|
