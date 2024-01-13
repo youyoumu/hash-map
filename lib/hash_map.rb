@@ -40,6 +40,7 @@ class HashMap
 
   def increase_buckets_size
     nodes = get_all_nodes
+    nodes = clear_next(nodes)
     @size = @size * 2
     @buckets = Array.new(@size)
     nodes.each do |node|
