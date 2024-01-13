@@ -35,6 +35,10 @@ class HashMap
     node.next_node = next_node
   end
 
+  def append_node(index, node)
+    @buckets[index].append(node)
+  end
+
   def increase_buckets_size
     nodes = get_all_nodes
     @size = @size * 2
