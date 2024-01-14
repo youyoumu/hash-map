@@ -68,6 +68,15 @@ class HashMap
     @buckets = Array.new(@size)
   end
 
+  def keys
+    nodes = get_all_nodes
+    keys_arr = []
+    nodes.each do |node|
+      keys_arr << node.key
+    end
+    keys_arr
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end
