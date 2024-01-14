@@ -22,6 +22,19 @@ class HashMap
     put_node(index, node)
   end
 
+  def get(key)
+    index = hash(key.split(''))
+    if @buckets[index].nil?
+      return nil
+    else
+      row = @buckets[index].gather
+      row.each do |node|
+        return node.value if node.key == key
+      end
+      return nil
+    end
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end
