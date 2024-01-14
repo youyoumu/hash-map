@@ -48,6 +48,16 @@ class HashMap
     end
   end
 
+  def remove(key)
+    return unless key?(key)
+    index = hash(key)
+    if @buckets[index].key == key
+      @buckets[index] = @buckets[index].next_node
+    else
+      @buckets[index].remove(key)
+    end
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end

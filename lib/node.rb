@@ -23,4 +23,12 @@ class Node
       return [self] + @next_node.gather
     end
   end
+
+  def remove(key)
+    if @next_node.key == key
+      @next_node = @next_node.next_node
+    else
+      @next_node.remove(key)
+    end
+  end
 end
