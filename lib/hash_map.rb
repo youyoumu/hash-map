@@ -58,6 +58,11 @@ class HashMap
     end
   end
 
+  def length
+    nodes = get_all_nodes
+    nodes.length
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end
