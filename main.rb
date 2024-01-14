@@ -9,3 +9,18 @@ arr_string.each do |string|
 end
 
 hash.print_buckets
+hash.set('Jyvd=', 'NEW VALUE!')
+hash.print_buckets
+p hash.get('Jyvd=')
+p hash.get('%^&*')
+p hash.key?('Jyvd=')
+p hash.key?('asdfg')
+hash.remove('5RCcm')
+hash.remove('ymASY')
+hash.print_buckets
+p hash.length
+# hash.clear
+# hash.print_buckets
+p hash.keys
+p hash.values
+p hash.entries
