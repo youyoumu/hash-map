@@ -35,6 +35,19 @@ class HashMap
     end
   end
 
+  def key?(key)
+    index = hash(key)
+    if @buckets[index].nil?
+      return false
+    else
+      row = @buckets[index].gather
+      row.each do |node|
+        return true if node.key == key
+      end
+      return false
+    end
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end
