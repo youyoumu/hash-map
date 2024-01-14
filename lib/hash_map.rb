@@ -63,6 +63,11 @@ class HashMap
     nodes.length
   end
 
+  def clear
+    @size = 16
+    @buckets = Array.new(@size)
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end
