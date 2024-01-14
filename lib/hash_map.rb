@@ -77,6 +77,15 @@ class HashMap
     keys_arr
   end
 
+  def values
+    nodes = get_all_nodes
+    values_arr = []
+    nodes.each do |node|
+      values_arr << node.value
+    end
+    values_arr
+  end
+
   def put_new_head_node(index, node)
     @buckets[index] = node
   end
