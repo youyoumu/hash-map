@@ -9,21 +9,21 @@ class HashMap
 
   def hash(value)
     result = 100
-    value.each do |char|
+    value.split('').each do |char|
       result += char.ord
     end
     result % @size
   end
 
   def set(key, value)
-    index = hash(key.split(''))
+    index = hash(key)
     node = Node.new(key, value)
     increase_buckets_size if buckets_almost_full?
     put_node(index, node)
   end
 
   def get(key)
-    index = hash(key.split(''))
+    index = hash(key)
     if @buckets[index].nil?
       return nil
     else
@@ -57,7 +57,7 @@ class HashMap
     @size = @size * 2
     @buckets = Array.new(@size)
     nodes.each do |node|
-      index = hash(node.key.split(''))
+      index = hash(node.key)
       put_node(index, node)
     end
   end
